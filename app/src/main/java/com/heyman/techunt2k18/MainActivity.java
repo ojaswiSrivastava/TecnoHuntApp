@@ -18,12 +18,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RadioButton r1;
-    private RadioButton r2;
-    private RadioButton r3;
-    private RadioButton r4;
-    private RadioButton r5;
-    private RadioButton r6,r7,r8;
+    private RadioButton r1,r2,r3,r4,r5,r6,r7,r8;
     private Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +46,6 @@ public class MainActivity extends AppCompatActivity
         r6= findViewById(R.id.r6);
         r7= findViewById(R.id.r7);
         r8= findViewById(R.id.r8);
-
 
         b1=findViewById(R.id.button);
 
