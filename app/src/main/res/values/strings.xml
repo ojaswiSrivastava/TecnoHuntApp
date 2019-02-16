@@ -1,0 +1,526 @@
+<resources>
+    <string name="app_name">TecHunt</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="Rules">Here are some of the rules fellas,\n\n
+    1. Teams must travel on foot.\n\n
+    2. Teams must stay together.\n\n
+    3. Teams are not allowed to use Internet facilities for searching answers.\n\n
+    4. Turn on the internet facilities.\n\n
+    5. Do not move tamper with destroy otherwise alter answers clue location.\n\n
+    6. Time Limit is 1 hour.\n\n
+    7. Do not guess, Wrong Answer will result in a penalty of loosing 1 min from the available time counter.\n\n
+        8. Do not close the application in between the game.\n\n
+
+    </string>
+
+    <string name="about">
+        \u2022 This event is divided into multiple rounds.\n\n
+    \u2022 Each round has two questions,\n
+    1. MCQ based Technical Question\n
+        2. Location Question.\n\n
+    \u2022 Only on the correct answer to the technical question,
+        the location question for the round will appear.\n\n
+    \u2022 For the location question, the team has to identify the location from the clues given in the question.\n\n
+    \u2022 An answer to this question will be a four digit code which will be present at the location subtly defined in the question.\n\n
+    \u2022 After giving the correct solution of given questions and solving series of clues,
+    teams will move to next round.\n\n
+    </string>
+
+    <string name="aboutSociety">OPTIMISTS is the student society of Association of Department of Computer Applications
+        in JSS Academy of Technical Education, Noida.\nIt supports students to cope with rapidly changing trends and technologies in IT world.\nIt provides students a platform to work as a team for learning, managing, training, organizing, enjoying and studying.\n
+    </string>
+
+    <string name="theTeam">This event is coordinated by the students of MCA Department.\n\n
+    Team Members: \n\n
+        1. Hemant Makhija (Technical Head)\n
+        2. Anand Sachan (Co-ordinator)\n
+        3. Kulbeer Chopra (Co-ordinator)\n
+        4. Shivam Kapoor (Sub Co-ordinator)\n
+        5. Prateek Upadhyay (Sub Co-ordinator)\n
+        6. Aishwarya Singh (Sub Co-ordinator)\n
+        7. Zeeshan Chaudhary (Sub Co-ordinator)\n
+    </string>
+
+    Team 1 Question
+
+    <string name="question11"> 23, 25, 31, 34, 37, 41\nFind the odd one.</string>
+
+    <string name="answer111">41</string>
+    <string name="answer112">34</string>
+    <string name="answer113">37</string>
+    <string name="answer114">23</string>
+
+    <string name="question12"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 35;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;
+}\n
+</string>
+
+    <string name="answer121">-35,35</string>
+    <string name="answer122">35,34</string>
+    <string name="answer123">-34,34</string>
+    <string name="answer124">-35,34</string>
+
+    <string name="question13"> If, Ross can finish his summer holiday homework in 15 days and Monica can finish her summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer131">0.53</string>
+    <string name="answer132">0.47</string>
+    <string name="answer133">0.25</string>
+    <string name="answer134">0.10</string>
+
+    <string name="question14"> If, TOTAL is coded as 19172. Then TIP will be coded as?</string>
+
+    <string name="answer141">127</string>
+    <string name="answer142">179</string>
+    <string name="answer143">125</string>
+    <string name="answer144">158</string>
+
+    <string name="question15"> Which term may be used interchangeably with "username?"</string>
+
+    <string name="answer151">Password</string>
+    <string name="answer152">Passphrase</string>
+    <string name="answer153">Domain name</string>
+    <string name="answer154">Handle</string>
+
+    Location Question
+
+    <string name="questionL11"> I wave all day but never tire,\nat the end of day I retire. What I am?</string>
+
+    <string name="questionL12"> What’s round and orange with strips all around?\nIn many driveways they bounce up and down.
+</string>
+
+    <string name="questionL13"> An offline source to get updated with worlds whereabouts.</string>
+
+    <string name="questionL14"> I have a numbering system.\nCaution is needed going my way.
+</string>
+
+    <string name="questionL15"> People stare and can’t get enough,\nPaper and invites hang around,\nUp on the wall I can be found.
+</string>
+
+    ********************************************************************
+
+    Team 2 Question
+
+    <string name="question21"> 33, 35, 41, 44, 47, 51\nFind the odd one.</string>
+
+    <string name="answer211">51</string>
+    <string name="answer212">44</string>
+    <string name="answer213">47</string>
+    <string name="answer214">33</string>
+
+    <string name="question22"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 45;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer221">-45,45</string>
+    <string name="answer222">-45,44</string>
+    <string name="answer223">45,44</string>
+    <string name="answer224">-44,44</string>
+
+    <string name="question23"> If, Joey can finish his summer holiday homework in 15 days and Phoebe can finish his summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer231">0.47</string>
+    <string name="answer232">0.25</string>
+    <string name="answer233">0.10</string>
+    <string name="answer234">0.53</string>
+
+    <string name="question24"> If, JSSATE is coded as 199172. Then SIR will be coded as?</string>
+
+    <string name="answer241">917</string>
+    <string name="answer242">950</string>
+    <string name="answer243">921</string>
+    <string name="answer244">912</string>
+
+    <string name="question25"> What is the aspect ratio of a 4K display?</string>
+
+    <string name="answer251">3:2</string>
+    <string name="answer252">4:3</string>
+    <string name="answer253">8:5</string>
+    <string name="answer254">16:9</string>
+
+    Location Question
+
+    <string name="questionL21"> I am crowded at the month’s beginning.\nI remain in 24*7 security whole my life.
+</string>
+
+    <string name="questionL22"> A pile of words a million stories but cannot tell them.</string>
+
+    <string name="questionL23"> Steve Jobs visited this place every Sunday in his early life.</string>
+
+    <string name="questionL24"> There’s a place nearby you’ll want to meet,\n
+A portal place where people greet.
+</string>
+
+    <string name="questionL25"> To solve the hunt,\nyou must get into the room wired to the net,\ncrammed with tech and full of code,\nthe clue is hidden in this above code.</string>
+
+    ********************************************************************
+
+    Team 3 Question
+
+    <string name="question31"> 43, 45, 51, 54, 57, 61\nFind the odd one.</string>
+
+    <string name="answer311">54</string>
+    <string name="answer312">61</string>
+    <string name="answer313">57</string>
+    <string name="answer314">43</string>
+
+    <string name="question32"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 55;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer321">-55,54</string>
+    <string name="answer322">-55,55</string>
+    <string name="answer323">55,54</string>
+    <string name="answer324">-54,54</string>
+
+    <string name="question33"> If, Santa can finish his summer holiday homework in 15 days and Banta can finish his summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer331">0.47</string>
+    <string name="answer332">0.53</string>
+    <string name="answer333">0.25</string>
+    <string name="answer334">0.10</string>
+
+    <string name="question34"> If, APPLE is coded as 20071. Then PRO will be coded as?</string>
+
+    <string name="answer341">027</string>
+    <string name="answer342">034</string>
+    <string name="answer343">043</string>
+    <string name="answer344">024</string>
+
+    <string name="question35"> What feature provides search suggestions as you type?</string>
+
+    <string name="answer351">Autocorrect</string>
+    <string name="answer352">Autocomplete</string>
+    <string name="answer353">Autofill</string>
+    <string name="answer354">Autocheck</string>
+
+    Location Question
+
+    <string name="questionL31"> A society which believes in positive mind-set.</string>
+
+    <string name="questionL32"> A place to get your hunger cured. </string>
+
+    <string name="questionL33"> Steve Jobs visited this place every Sunday in his early life.</string>
+
+    <string name="questionL34"> There’s a place nearby you’ll want to meet,\nA portal place where people greet
+</string>
+
+    <string name="questionL35"> To solve the hunt,\nyou must get into the room wired to the net,\ncrammed with tech and full of code,\nthe clue is hidden in this above code.
+</string>
+
+    ********************************************************************
+
+    Team 4 Question
+
+    <string name="question41"> 53, 55, 61, 64, 67, 71\nFind the odd one.</string>
+
+    <string name="answer411">71</string>
+    <string name="answer412">67</string>
+    <string name="answer413">53</string>
+    <string name="answer414">64</string>
+
+    <string name="question42"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 65;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer421">-65,65</string>
+    <string name="answer422">-65,64</string>
+    <string name="answer423">65,64</string>
+    <string name="answer424">-64,64</string>
+
+    <string name="question43"> If Sonu can finish his summer holiday homework in 15 days and Monu can finish his summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer431">0.47</string>
+    <string name="answer432">0.25</string>
+    <string name="answer433">0.10</string>
+    <string name="answer434">0.53</string>
+
+    <string name="question44"> If, PILANI is coded as 152685. Then BITS will be coded as? </string>
+
+    <string name="answer441">7593</string>
+    <string name="answer442">8561</string>
+    <string name="answer443">9562 </string>
+    <string name="answer444">6589</string>
+
+    <string name="question45"> Which programming language was developed by Apple?</string>
+
+    <string name="answer451">Perl</string>
+    <string name="answer452">Python</string>
+    <string name="answer453">Java</string>
+    <string name="answer454">Swift</string>
+
+    Location Question
+
+    <string name="questionL41"> An offline source to get updated with worlds whereabouts.</string>
+
+    <string name="questionL42"> I have a numbering system.\nCaution is needed going my way.
+</string>
+
+    <string name="questionL43"> People stare and can’t get enough,\nPaper and invites hang around,\nUp on the wall I can be found.
+</string>
+
+    <string name="questionL44"> I am crowded at the month’s beginning,\nI remain in 24*7 security whole my life.
+</string>
+
+    <string name="questionL45"> A pile of words a million stories but cannot tell them.</string>
+
+    ********************************************************************
+
+
+    Team 5 Question
+
+    <string name="question51"> 63,65,71,74,77,81\nFind the odd one.</string>
+
+    <string name="answer511">81</string>
+    <string name="answer512">77</string>
+    <string name="answer513">63</string>
+    <string name="answer514">74</string>
+
+    <string name="question52"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 75;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer521">-75,75</string>
+    <string name="answer522">-75,74</string>
+    <string name="answer523">75,74</string>
+    <string name="answer524">-74,74</string>
+
+    <string name="question53"> If Bonny can finish his summer holiday homework in 15 days and Anil can finish his summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer531">0.47</string>
+    <string name="answer532">0.25</string>
+    <string name="answer533">0.10</string>
+    <string name="answer534">0.53</string>
+
+    <string name="question54"> If, NEHLANI is coded as 3278135. Then PANKAJ will be coded as? </string>
+
+    <string name="answer541">813516</string>
+    <string name="answer542">613914</string>
+    <string name="answer543">513812</string>
+    <string name="answer544">713512</string>
+
+    <string name="question55"> Which of the following transfers data between a hard disk and memory?</string>
+
+    <string name="answer551">Ultra DMA</string>
+    <string name="answer552">Firewire</string>
+    <string name="answer553">Southbridge</string>
+    <string name="answer554">VRAM</string>
+
+    Location Question
+
+    <string name="questionL51"> An offline source to get updated with worlds whereabouts.</string>
+
+    <string name="questionL52"> I have a numbering system,\nCaution is needed going my way.
+</string>
+
+    <string name="questionL53"> People stare and can’t get enough,\nPaper and invites hang around,\nUp on the wall I can be found.
+</string>
+
+    <string name="questionL54"> I am crowded at the month’s beginning,\nI remain in 24*7 security whole my life.
+</string>
+
+    <string name="questionL55"> A pile of words a million stories but cannot tell them.</string>
+
+    ********************************************************************
+
+
+    Team 6 Question
+
+    <string name="question61"> 73, 75, 81, 84, 87, 91\nFind the odd one.</string>
+
+    <string name="answer611">91</string>
+    <string name="answer612">87</string>
+    <string name="answer613">73</string>
+    <string name="answer614">84</string>
+
+    <string name="question62"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 85;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer621">-85,85</string>
+    <string name="answer622">-85,84</string>
+    <string name="answer623">85,84</string>
+    <string name="answer624">-84,84</string>
+
+    <string name="question63"> If Lalu can finish his summer holiday homework in 15 days and Akhilesh can finish his summer holiday homework in 20 days. If they work on it together for 4 days, then the fraction of the holiday work that is left is </string>
+
+    <string name="answer631">0.47</string>
+    <string name="answer632">0.25</string>
+    <string name="answer633">0.10</string>
+    <string name="answer634">0.53</string>
+
+    <string name="question64"> If, STREET is coded as 715226. Then BAKERS will be coded as? </string>
+
+    <string name="answer641">643257</string>
+    <string name="answer642">874257</string>
+    <string name="answer643">736257</string>
+    <string name="answer644">934257</string>
+
+    <string name="question65"> A directory is visually represented as what?</string>
+
+    <string name="answer651">A folder</string>
+    <string name="answer652">A file</string>
+    <string name="answer653">An application</string>
+    <string name="answer654">A library</string>
+
+    Location Question
+
+    <string name="questionL61"> There’s a place nearby you’ll want to meet,\nA portal place where people greet
+</string>
+
+    <string name="questionL62"> To solve the hunt,\nyou must get into the room wired to the net,\n
+    crammed with tech and full of code,\nthe clue is hidden in this above code.
+    </string>
+
+    <string name="questionL63"> A society which believes in positive mind-set.</string>
+
+    <string name="questionL64"> A place to get your hunger cured. </string>
+
+    <string name="questionL65"> I wave all day but never tire,\nat the end of day I retire.\nWhat I am?
+</string>
+
+    ********************************************************************
+
+    Team 7 Question
+
+    <string name="question71"> 43,45,51,54,57,61\nFind the odd one.</string>
+    <string name="answer711">54</string>
+    <string name="answer712">61</string>
+    <string name="answer713">57</string>
+    <string name="answer714">43</string>
+
+    <string name="question72"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 85;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer721">-85,85</string>
+    <string name="answer722">85,84</string>
+    <string name="answer723">-84,84</string>
+    <string name="answer724">-85,84</string>
+
+
+    <string name="question73"> If Russel can finish his summer holiday homework in 15 days and Peter can finish his summer holiday homework in 20 days.\n If they work on it together for 4 days, then the fraction of the holiday work that is left is?</string>
+
+    <string name="answer731">0.47</string>
+    <string name="answer732">0.25</string>
+    <string name="answer733">0.10</string>
+    <string name="answer734">0.53</string>
+
+
+    <string name="question74"> If, NEHLANI is coded as 3278135. Then PANKAJ will be coded as?</string>
+
+    <string name="answer741">813516</string>
+    <string name="answer742">613914</string>
+    <string name="answer743">513812</string>
+    <string name="answer744">713512</string>
+
+
+    <string name="question75"> A residual image left on a screen is also called what?</string>
+
+    <string name="answer751">Degauss</string>
+    <string name="answer752">Display skewing</string>
+    <string name="answer753">Screen burn</string>
+    <string name="answer754">Monochrome</string>
+
+
+    Location Question
+
+    <string name="questionL71">A pile of words a million stories but cannot tell them.\n</string>
+    <string name="questionL72">Steve Jobs visited this place every Sunday in his early life.\n</string>
+    <string name="questionL73">A society which believes in positive mind-set.\n</string>
+    <string name="questionL74">What’s round and orange with strips all around?\nIn many driveways they bounce up and down.</string>
+    <string name="questionL75">People stare and can’t get enough,\nPaper and invites hang around,\nUp on the wall I can be found.</string>
+
+    ****************************************************************
+
+    Team 8 Question
+
+    <string name="question81"> 33,35,41,44,47,51\nFind the odd one.</string>
+
+    <string name="answer811">51</string>
+    <string name="answer812">44</string>
+    <string name="answer813">47</string>
+    <string name="answer814">33</string>
+
+    <string name="question82"> #include&lt;stdio.h&gt;\n
+int main(){\n
+    int a, b = 95;\n
+    a = \-b\-\-;\n
+    printf("a = %d, b = %d", a, b);\n
+    return 0;}\n
+</string>
+
+    <string name="answer821">95,94</string>
+    <string name="answer822">-94,94</string>
+    <string name="answer823">-95,94</string>
+    <string name="answer824">-95,95</string>
+
+
+    <string name="question83"> If Zakir can finish his summer holiday homework in 15 days and Atul can finish his summer holiday homework in 20 days.\nIf they work on it together for 4 days, then the fraction of the holiday work that is left is?</string>
+
+    <string name="answer831">0.47</string>
+    <string name="answer832">0.25</string>
+    <string name="answer833">0.10</string>
+    <string name="answer834">0.53</string>
+
+
+    <string name="question84"> If, JSSATE is coded as 199172. Then SIR will be coded as?</string>
+
+    <string name="answer841">917</string>
+    <string name="answer842">950</string>
+    <string name="answer843">921</string>
+    <string name="answer844">912</string>
+
+
+    <string name="question85"> What type of a document is an XSLT style sheet used to format?</string>
+
+    <string name="answer851">CSS</string>
+    <string name="answer852">XML</string>
+    <string name="answer853">XSLX</string>
+    <string name="answer854">STL</string>
+
+
+    Location Question
+
+    <string name="questionL81">A society which believes in positive mind-set.</string>
+    <string name="questionL82">A place to get your hunger cured.</string>
+    <string name="questionL83">I wave all day but never tire,\nat the end of day I retire.\nWhat I am?</string>
+    <string name="questionL84">I have a numbering system.\nCaution is needed going my way.</string>
+    <string name="questionL85">I am crowded at the month’s beginning.\nI remain in 24*7 security whole my life.</string>
+
+    ****************************************************************
+
+
+</resources>
