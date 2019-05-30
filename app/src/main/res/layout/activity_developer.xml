@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wind"
-    tools:context="com.heyman.techunt2k18.Developer">
+    tools:context="com.optimists.techunt2k19.Developer">
 
     <ScrollView
         android:layout_width="wrap_content"

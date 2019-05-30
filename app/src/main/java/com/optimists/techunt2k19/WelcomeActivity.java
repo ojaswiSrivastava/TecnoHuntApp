@@ -1,4 +1,4 @@
-package com.heyman.techunt2k18;
+package com.optimists.techunt2k19;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 

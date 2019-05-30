@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.heyman.techunt2k18">
+    package="com.optimists.techunt2k19">
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name="com.optimists.techunt2k19.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,67 +18,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.optimists.techunt2k19.MainActivity"
             android:screenOrientation="portrait"
             android:label="TecHunt" />
         <activity
-            android:name=".TeamlLogin"
+            android:name="com.optimists.techunt2k19.TeamlLogin"
             android:label="Team Login"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.optimists.techunt2k19.MainActivity" />
         <activity
-            android:name=".RulesStart"
+            android:name="com.optimists.techunt2k19.RulesStart"
             android:label="Rules"
             android:screenOrientation="portrait"
-            android:parentActivityName=".TeamlLogin" />
+            android:parentActivityName="com.optimists.techunt2k19.TeamlLogin" />
         <activity
-            android:name=".NavRules"
+            android:name="com.optimists.techunt2k19.NavRules"
             android:label="Rules"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.optimists.techunt2k19.MainActivity" />
         <activity
-            android:name=".AboutGame"
+            android:name="com.optimists.techunt2k19.AboutGame"
             android:screenOrientation="portrait"
             android:label="About The Game"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.optimists.techunt2k19.MainActivity" />
         <activity
-            android:name=".OurSociety"
+            android:name="com.optimists.techunt2k19.OurSociety"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Developer"
+            android:name="com.optimists.techunt2k19.Developer"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Team1Quiz"
+            android:name="com.optimists.techunt2k19.TeamQuiz"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team2Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team3Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team4Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team5Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team6Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Team7Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity
-            android:name=".Team8Quiz"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

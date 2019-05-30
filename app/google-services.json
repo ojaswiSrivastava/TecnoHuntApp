@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "475052253653",
-    "firebase_url": "https://techunt2k18-6e983.firebaseio.com",
-    "project_id": "techunt2k18-6e983",
-    "storage_bucket": "techunt2k18-6e983.appspot.com"
+    "project_number": "428141370660",
+    "firebase_url": "https://teckhuntfor29teams.firebaseio.com",
+    "project_id": "teckhuntfor29teams",
+    "storage_bucket": "teckhuntfor29teams.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:475052253653:android:29af7acbb23eb18c",
+        "mobilesdk_app_id": "1:428141370660:android:36dfdc6d28178bcf",
         "android_client_info": {
-          "package_name": "com.heyman.techunt2k18"
+          "package_name": "com.optimists.techunt2k19"
         }
       },
       "oauth_client": [
         {
-          "client_id": "475052253653-gj15u7lj6t4t1u0rf5opo35jg6gbl6o8.apps.googleusercontent.com",
+          "client_id": "428141370660-a8tsmdk3p8v95kvd3kc7huipn2flkg2v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.heyman.techunt2k18",
-            "certificate_hash": "28d260be5b71cb1a48ef5b472a490c0d1a251252"
+            "package_name": "com.optimists.techunt2k19",
+            "certificate_hash": "4ebc2fb0d5ec9a12ae35c4b0251646246332cebc"
           }
         },
         {
-          "client_id": "475052253653-b3nbsubunfpbr4d7lrkub0m9lqv25op8.apps.googleusercontent.com",
+          "client_id": "428141370660-4gpivul045m6vtqc61umce9d2988g4lm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC510N5RKdFEYq196Q3YSPGK4pxHqg21vI"
+          "current_key": "AIzaSyBuHLK96MoEwPNvEs93Myv012S6epdK3o0"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "475052253653-b3nbsubunfpbr4d7lrkub0m9lqv25op8.apps.googleusercontent.com",
+              "client_id": "428141370660-4gpivul045m6vtqc61umce9d2988g4lm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

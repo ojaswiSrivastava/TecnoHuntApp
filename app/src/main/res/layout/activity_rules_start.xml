@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.heyman.techunt2k18.RulesStart"
+    tools:context="com.optimists.techunt2k19.RulesStart"
     android:background="@drawable/wind">
 
     <ScrollView

@@ -1,17 +1,18 @@
-package com.heyman.techunt2k18;
+package com.optimists.techunt2k19;
 
 import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.widget.TextView;
 
-public class NavRules extends AppCompatActivity {
+public class Developer extends AppCompatActivity {
 
+    TextView tx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_rules);
-        TextView tx= findViewById(R.id.textView2);
+        setContentView(R.layout.activity_developer);
+        tx=findViewById(R.id.textView);
         Typeface customFont=Typeface.createFromAsset(getAssets(),"OswaldR.ttf");
         tx.setTypeface(customFont);
     }

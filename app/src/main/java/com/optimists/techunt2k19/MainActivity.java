@@ -1,4 +1,4 @@
-package com.heyman.techunt2k18;
+package com.optimists.techunt2k19;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,19 +9,24 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RadioButton r1,r2,r3,r4,r5,r6,r7,r8;
-    private Button b1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         //getSupportActionBar().hide();
 
         super.onCreate(savedInstanceState);
@@ -38,16 +43,42 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        r1= findViewById(R.id.r1);
-        r2= findViewById(R.id.r2);
-        r3= findViewById(R.id.r3);
-        r4= findViewById(R.id.r4);
-        r5= findViewById(R.id.r5);
-        r6= findViewById(R.id.r6);
-        r7= findViewById(R.id.r7);
-        r8= findViewById(R.id.r8);
 
-        b1=findViewById(R.id.button);
+        Log.d("DRAWER","outside drawer");
+
+        int[] teamNumber =new int[30];
+        String[] teamNames=new String[30];
+        int i;
+        for(i=0;i<30;i++)
+        {
+            teamNumber[i]=i+1;
+            teamNames[i]="Team"+Integer.toString(i+1);
+        }
+
+        ListAdapter RsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,teamNames);
+        ListView StListView = (ListView) findViewById(R.id.teamSelector);
+
+        StListView.setAdapter(RsAdapter);
+
+        StListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                        String teamSelectedInWords = String.valueOf(parent.getItemAtPosition(position));
+                        //Toast is used for a pop-up message on click
+                        //Toast.makeText(getApplicationContext(), ((TextView)view).getText(), Toast.LENGTH_SHORT).show();
+                        Intent i=new Intent(MainActivity.this,TeamlLogin.class);
+                        i.putExtra("Team",teamSelectedInWords);
+                        startActivity(i);
+                    }
+                }
+        );
+
+
+
+
 
         TextView tx = (TextView)findViewById(R.id.textView);
         Typeface custom_font = Typeface.createFromAsset(getAssets(),  "BebasNeuR.ttf");
@@ -58,63 +89,11 @@ public class MainActivity extends AppCompatActivity
 
 
         Typeface custom_font2 = Typeface.createFromAsset(getAssets(),  "OswaldR.ttf");
-        r1.setTypeface(custom_font2);
-        r2.setTypeface(custom_font2);
-        r3.setTypeface(custom_font2);
-        r4.setTypeface(custom_font2);
-        r5.setTypeface(custom_font2);
-        r6.setTypeface(custom_font2);
-        r7.setTypeface(custom_font2);
-        r8.setTypeface(custom_font2);
 
-        b1.setTypeface(custom_font2);
 
     }
 
-    public void onProceed(View view)
-    {
-        Intent i=new Intent(this,TeamlLogin.class);
-        if(r1.isChecked()) {
-            i.putExtra("Team","1");
-            startActivity(i);
-        }
-        if(r2.isChecked())
-        {
-            i.putExtra("Team","2");
-            startActivity(i);
-        }
-        if(r3.isChecked())
-        {
-            i.putExtra("Team","3");
-            startActivity(i);
-        }
-        if(r4.isChecked())
-        {
-            i.putExtra("Team","4");
-            startActivity(i);
-        }
-        if(r5.isChecked())
-        {
-            i.putExtra("Team","5");
-            startActivity(i);
-        }
-        if(r6.isChecked())
-        {
-            i.putExtra("Team","6");
-            startActivity(i);
-        }
-        if(r7.isChecked())
-        {
-            i.putExtra("Team","7");
-            startActivity(i);
-        }
-        if(r8.isChecked())
-        {
-            i.putExtra("Team","8");
-            startActivity(i);
-        }
-    }
-    
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -129,6 +108,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Log.d("DRAWER","button pressed");
 
         if (id == R.id.nav_game) {
             Intent i=new Intent(this,AboutGame.class);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wind"
-    tools:context="com.heyman.techunt2k18.OurSociety">
+    tools:context="com.optimists.techunt2k19.OurSociety">
 
     <ImageView
         android:id="@+id/imageView2"

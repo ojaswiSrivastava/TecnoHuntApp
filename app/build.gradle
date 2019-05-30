@@ -4,7 +4,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.heyman.techunt2k18"
+        applicationId "com.optimists.techunt2k19"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -29,5 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.firebase:firebase-core:16.0.7'
     implementation 'com.google.firebase:firebase-database:16.0.6'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.github.alexfu:CountDownView:0.1.0'
 }
+apply plugin: 'com.google.gms.google-services'

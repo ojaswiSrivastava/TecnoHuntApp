@@ -1,4 +1,4 @@
-package com.heyman.techunt2k18;
+package com.optimists.techunt2k19;
 
 import android.graphics.Typeface;
 import android.os.Build;
@@ -9,6 +9,7 @@ import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -27,23 +28,8 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Team5Quiz extends AppCompatActivity {
+public class TeamQuiz extends AppCompatActivity {
 
-    QuestionAnswer[] array=new QuestionAnswer[]{
-            new QuestionAnswer(R.string.question51,'d',R.string.answer511,R.string.answer512,R.string.answer513,R.string.answer514),
-            new QuestionAnswer(R.string.question52,'b',R.string.answer521,R.string.answer522,R.string.answer523,R.string.answer524),
-            new QuestionAnswer(R.string.question53,'d',R.string.answer531,R.string.answer532,R.string.answer533,R.string.answer534),
-            new QuestionAnswer(R.string.question54,'b',R.string.answer541,R.string.answer542,R.string.answer543,R.string.answer544),
-            new QuestionAnswer(R.string.question55,'a',R.string.answer551,R.string.answer552,R.string.answer553,R.string.answer554)
-    };
-    LocQuestionAnswer[] locArray=new LocQuestionAnswer[]
-            {
-                    new LocQuestionAnswer(R.string.questionL51,8932),
-                    new LocQuestionAnswer(R.string.questionL52,2485),
-                    new LocQuestionAnswer(R.string.questionL53,5253),
-                    new LocQuestionAnswer(R.string.questionL54,5195),
-                    new LocQuestionAnswer(R.string.questionL55,6124)
-            };
 
 
     CountDownView countDownView;
@@ -62,11 +48,22 @@ public class Team5Quiz extends AppCompatActivity {
     private int time;
     long time1,time2,time3;
     DatabaseReference root= FirebaseDatabase.getInstance().getReference();
-    DatabaseReference child=root.child("Team5");
-    DatabaseReference currentTime=child.child("TimeTakenInSec");
-    DatabaseReference scoreUpdate=child.child("Score");
-    DatabaseReference startTime=child.child("StartTime");
-    DatabaseReference timeFinished=child.child("TimeFinished");
+    DatabaseReference child;
+    DatabaseReference currentTime;
+    DatabaseReference scoreUpdate;
+    DatabaseReference startTime;
+    DatabaseReference timeFinished;
+
+
+
+    String[] question_answer;
+    String[] location_questions;
+    int teamNumberInteger;
+    int numOfSetOfQuestions;
+    int numOfSetOfLocationQuestions;
+    int indexForSettingNextQuestion;
+    int indexForSettingNextLocationQuestion;
+
 
     @Override
     public void onBackPressed()
@@ -77,38 +74,47 @@ public class Team5Quiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_team1quiz);
-        time=3600000;
-        countDownView=findViewById(R.id.textView4);
+        setContentView(R.layout.activity_team_quiz);
+
+        String teamSelectedInWords = getIntent().getStringExtra("Team");
+
+
+
+        child=root.child(teamSelectedInWords);
+        currentTime=child.child("TimeTakenInSec");
+        scoreUpdate=child.child("Score");
+        startTime=child.child("StartTime");
+        timeFinished=child.child("TimeFinished");
+
+        time = 3600000;
+        countDownView = findViewById(R.id.textView4);
         countDownView.setStartDuration(time);
         countDownView.start();
-        score=findViewById(R.id.scoreTextView);
-        round=findViewById(R.id.roundTextView);
-        question=findViewById(R.id.questionTextView);
-        locationQuestion=findViewById(R.id.lQuestionTextView);
-        r1=findViewById(R.id.r1);
-        r2=findViewById(R.id.r2);
-        r3=findViewById(R.id.r3);
-        r4=findViewById(R.id.r4);
-        progressBar=findViewById(R.id.progressBar);
-        editText=findViewById(R.id.editText);
-        //locationQuestion.setText(locArray[locIndex].getQuestionID());
-        round.setText("Round " + currentRound);
-        b1=findViewById(R.id.button);
-        b2=findViewById(R.id.button2);
+        score = findViewById(R.id.scoreTextView);
+        round = findViewById(R.id.roundTextView);
+        question = findViewById(R.id.questionTextView);
+        locationQuestion = findViewById(R.id.lQuestionTextView);
+        r1 = findViewById(R.id.r1);
+        r2 = findViewById(R.id.r2);
+        r3 = findViewById(R.id.r3);
+        r4 = findViewById(R.id.r4);
+        progressBar = findViewById(R.id.progressBar);
+        editText = findViewById(R.id.editText);
+        b1 = findViewById(R.id.button);
+        b2 = findViewById(R.id.button2);
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "OswaldR.ttf");
+        Typeface customFont2 = Typeface.createFromAsset(getAssets(), "BebasNeuR.ttf");
 
-        locationQuestion.setVisibility(View.INVISIBLE);
-        b2.setVisibility(View.INVISIBLE);
-        editText.setVisibility(View.INVISIBLE);
-        question.setText(R.string.question51);
-        r1.setText(R.string.answer511);
-        r2.setText(R.string.answer512);
-        r3.setText(R.string.answer513);
-        r4.setText(R.string.answer514);
+        question_answer = getResources().getStringArray(R.array.questions);
+        location_questions = getResources().getStringArray(R.array.loc_questions);
+        numOfSetOfQuestions = ((question_answer.length)/6)/5;
+        numOfSetOfLocationQuestions = ((location_questions.length)/2)/5;
 
-        Typeface customFont=Typeface.createFromAsset(getAssets(),"OswaldR.ttf");
-        Typeface customFont2=Typeface.createFromAsset(getAssets(),"BebasNeuR.ttf");
 
+        //int indexForSetting = (teamNumberInteger-1) % numOfSetOfQuestions;
+        //Log.d(TAG,"indexForSetting="+indexForSetting);
+
+        //Setting text fonts
         round.setTypeface(customFont2);
         question.setTypeface(customFont);
         r1.setTypeface(customFont);
@@ -117,16 +123,48 @@ public class Team5Quiz extends AppCompatActivity {
         r4.setTypeface(customFont);
         b1.setTypeface(customFont);
         score.setTypeface(customFont);
-
         locationQuestion.setTypeface(customFont);
         editText.setTypeface(customFont);
         b2.setTypeface(customFont);
 
+        round.setText("Round " + currentRound);
+
+
+        locationQuestion.setVisibility(View.INVISIBLE);
+        b2.setVisibility(View.INVISIBLE);
+        editText.setVisibility(View.INVISIBLE);
+
+
+        String teamNumber= teamSelectedInWords.replaceAll("[^0-9]", "");
+        teamNumberInteger = Integer.parseInt(teamNumber);
+        Log.d("OJASWI","teamSelectedInWords="+teamSelectedInWords);
+        Log.d("OJASWI","teamNumber="+teamNumber);
+        Log.d("OJASWI","teamNumberInteger="+teamNumberInteger);
+
+
+
+
+
+
+        //INITIAL SET OF LOGICAL QUESTIONS SHOWN
+        indexForSettingNextQuestion = findIndexForQuestion(teamNumberInteger, numOfSetOfQuestions);
+        question.setText(question_answer[indexForSettingNextQuestion]);
+        r1.setText(question_answer[indexForSettingNextQuestion +1]);
+        r2.setText(question_answer[indexForSettingNextQuestion +2]);
+        r3.setText(question_answer[indexForSettingNextQuestion +3]);
+        r4.setText(question_answer[indexForSettingNextQuestion +4]);
+
+        String ans_s = question_answer[indexForSettingNextQuestion+5];
+        char ans = ans_s.charAt(0);
+        String ans_s2=String.valueOf(ans);
+
+
+
         SimpleDateFormat startTimeObj = new SimpleDateFormat();
         String startTimeString = startTimeObj.format(new Date());
         startTime.setValue(startTimeString);
-        timeFinished.setValue(false);
         time1 = System.currentTimeMillis();
+        timeFinished.setValue(false);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -140,6 +178,7 @@ public class Team5Quiz extends AppCompatActivity {
 
     }
 
+
     void alertPopup()
     {
         AlertDialog.Builder alertDialog=new AlertDialog.Builder(this);
@@ -152,21 +191,43 @@ public class Team5Quiz extends AppCompatActivity {
         timeFinished.setValue(true);
     }
 
-    public void nextQuestion(boolean update)
+    public int findIndexForQuestion(int teamNumberInteger, int numOfSetOfQuestions){
+
+
+        int indexForSetting = ((teamNumberInteger-1) % numOfSetOfQuestions)*30;
+        Log.d("OJASWI","indexForSetting="+indexForSetting);
+
+        return indexForSetting;
+    }
+    public int findIndexForLocationQuestion(int teamNumberInteger, int numOfSetOfLocationQuestions){
+
+
+        int indexForSetting = ((teamNumberInteger-1) % numOfSetOfLocationQuestions)*9;
+        Log.d("OJASWI","indexForSettinglocques="+indexForSetting);
+
+        return indexForSetting;
+    }
+
+
+
+
+
+    public void setNextQuestion(boolean ifUpdate)
     {
         question=findViewById(R.id.questionTextView);
-        if(update==true)
+        if(ifUpdate==true)
         {
-            index=(index+1) %5;
-            question.setText(array[index].getQuestionId());
-            r1.setText(array[index].getAnswer1Id());
-            r2.setText(array[index].getAnswer2Id());
-            r3.setText(array[index].getAnswer3Id());
-            r4.setText(array[index].getAnswer4Id());
+
+            indexForSettingNextQuestion = (indexForSettingNextQuestion +6);
+            question.setText(question_answer[indexForSettingNextQuestion]);
+            r1.setText(question_answer[indexForSettingNextQuestion +1]);
+            r2.setText(question_answer[indexForSettingNextQuestion +2]);
+            r3.setText(question_answer[indexForSettingNextQuestion +3]);
+            r4.setText(question_answer[indexForSettingNextQuestion +4]);
         }
         else
         {
-            question.setText(array[index].getQuestionId());
+            question.setText(question_answer[indexForSettingNextQuestion]);//OR PUT 0 for first INDEX
         }
     }
 
@@ -174,6 +235,10 @@ public class Team5Quiz extends AppCompatActivity {
 
     public void onSubmit(View view)
     {
+        Log.d("OJASWI","indexForSettingNextQuestion="+indexForSettingNextQuestion);
+        Log.d("OJASWI","numOfSetOfQuestions="+ numOfSetOfQuestions);
+        Log.d("OJASWI","teamNumberInteger="+teamNumberInteger);
+
         if(r1.isChecked())
             checkAnswer('a');
         if(r2.isChecked())
@@ -186,19 +251,20 @@ public class Team5Quiz extends AppCompatActivity {
 
     public void checkAnswer(char userAnswer)
     {
-        int div=array.length+locArray.length;
-        increment=(int)Math.ceil(100/div);
-        char correctAnswer=array[index].getAnswer();
+        int totalQuestions= 10;
+        increment=(int)Math.ceil(100/totalQuestions);
+
+        char correctAnswer= (question_answer[indexForSettingNextQuestion+5].charAt(0));;
         if(correctAnswer==userAnswer)
         {
             Toast.makeText(this,"That's Correct",Toast.LENGTH_SHORT).show();
             if(currentScore==0)
             {
-                nextLocQuestion(false);
+                setNextLocQuestion(false);
             }
             else
             {
-                nextLocQuestion(true);
+                setNextLocQuestion(true);
             }
             question.setVisibility(View.INVISIBLE);
             r1.setVisibility(View.INVISIBLE);
@@ -213,22 +279,21 @@ public class Team5Quiz extends AppCompatActivity {
 
             progressBar.incrementProgressBy(increment);
             currentScore++;
-            score.setText("Score- " + currentScore + "/" + "10");
             scoreUpdate.setValue(currentScore);
             time2=System.currentTimeMillis();
             time3=(time2-time1);
             currentTime.setValue(time3/1000);
-
+            score.setText("Score- " + currentScore + "/" + "10");
         }
         else
         {
             Toast.makeText(this,"Wrong!",Toast.LENGTH_SHORT).show();
-            nextLocQuestion(false);
+            setNextLocQuestion(false);
             shakeIt();
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Wrong Answer");
-            builder.setMessage("After 10 seconds dialog will close automatically");
+            builder.setMessage("After 30 seconds dialog will close automatically");
             builder.setCancelable(false);
 
             final AlertDialog closedialog= builder.create();
@@ -241,7 +306,7 @@ public class Team5Quiz extends AppCompatActivity {
                     closedialog.dismiss();
                     timer2.cancel(); //this will cancel the timer of the system
                 }
-            }, 10000);//60000
+            }, 30000);//60000
 
         }
     }
@@ -255,19 +320,22 @@ public class Team5Quiz extends AppCompatActivity {
         {
             int userAnswer = Integer.parseInt(userAns);
             checkLocAnswer(userAnswer);
+            Log.d("OJASWI","indexForSettingNextLocationQuestion="+indexForSettingNextLocationQuestion);
+            Log.d("OJASWI","numOfSetOfLocationQuestions="+ numOfSetOfLocationQuestions);
+            Log.d("OJASWI","teamNumberInteger="+teamNumberInteger);
         }
     }
 
     void checkLocAnswer(int userAnswer)
     {
-        int div=array.length+locArray.length;
-        increment=(int)Math.ceil(100/div);
-        int correctAnswer=locArray[locIndex].getAnswer();
+        int totalQuestions= 10;
+        increment=(int)Math.ceil(100/totalQuestions);
+        int correctAnswer=Integer.parseInt(location_questions[indexForSettingNextLocationQuestion+1]);
         round=findViewById(R.id.roundTextView);
         score=findViewById(R.id.scoreTextView);
         if(correctAnswer==userAnswer)
         {
-            progressBar.incrementProgressBy(div);
+            progressBar.incrementProgressBy(increment);
             locationQuestion.setVisibility(View.INVISIBLE);
             editText.setVisibility(View.INVISIBLE);
             b2.setVisibility(View.INVISIBLE);
@@ -281,11 +349,12 @@ public class Team5Quiz extends AppCompatActivity {
             question.setVisibility(View.VISIBLE);
 
 
-            nextQuestion(true);
+            setNextQuestion(true);
             currentScore++;
             Toast.makeText(this,"That's Corrent!",Toast.LENGTH_SHORT).show();
             score.setText("Score- " + currentScore + "/" + "10");
             currentRound++;
+
             scoreUpdate.setValue(currentScore);
             time2=System.currentTimeMillis();
             time3=(time2-time1);
@@ -308,7 +377,7 @@ public class Team5Quiz extends AppCompatActivity {
 
                 AlertDialog alertDialog=new AlertDialog.Builder(this).create();
                 alertDialog.setTitle("Your team has finished the game.");
-                alertDialog.setMessage("Show this message to the AB-5 MCA Lab.");
+                alertDialog.setMessage("Show this message to the Room no.119 in AB-5.");
                 alertDialog.setView(inflater.inflate(R.layout.alert,null));
                 alertDialog.setCancelable(false);
                 alertDialog.show();
@@ -326,7 +395,7 @@ public class Team5Quiz extends AppCompatActivity {
         }
         else
         {
-            nextQuestion(false);
+            setNextQuestion(false);
             Toast.makeText(this,"Wrong!",Toast.LENGTH_SHORT).show();
             shakeIt();
 
@@ -351,18 +420,23 @@ public class Team5Quiz extends AppCompatActivity {
 
     }
 
-    void nextLocQuestion(boolean update)
+    void setNextLocQuestion(boolean update)
     {
 
         locationQuestion=findViewById(R.id.lQuestionTextView);
         if(update==true)
         {
-            locIndex=(locIndex+1) % 5;
-            locationQuestion.setText(locArray[locIndex].getQuestionID());
+
+            indexForSettingNextLocationQuestion = (indexForSettingNextLocationQuestion +2);
+            locationQuestion.setText(location_questions[indexForSettingNextLocationQuestion]);
+
         }
         else
         {
-            locationQuestion.setText(locArray[locIndex].getQuestionID());
+            indexForSettingNextLocationQuestion = findIndexForLocationQuestion(teamNumberInteger, numOfSetOfLocationQuestions);
+            locationQuestion.setText(location_questions[indexForSettingNextLocationQuestion]);
+
+
         }
     }
 
